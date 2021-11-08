@@ -1,0 +1,363 @@
+main {
+    font: 1.2em Helvetica, Arial, sans-serif;
+    padding: 0;
+    /* max-width:504px;
+min-width:504px; */
+    /*margin:auto;*/
+    margin-left: 5%;
+    margin-right: 5%;
+
+    display: grid;
+    grid-template-areas: 
+        "a a"
+        "b b"
+        "c c"        
+        "f e"
+        "g g";
+
+    grid-template-rows: 130px 120px auto auto auto 100px;
+    grid-template-columns: 3fr 1fr;
+}
+
+
+@media screen and (max-width: 790px) {
+    form {
+        font: 1.2em Helvetica, Arial, sans-serif;
+        padding: 0;
+
+        margin: auto;
+
+
+        display: grid;
+        grid-template-areas: 
+            "a"
+            "b"
+            "c"          
+            "e"
+            "f"
+            "g";
+
+        grid-template-rows: auto 120px auto  auto auto 100px;
+        /*  grid-template-columns: 3fr; */
+    }
+}
+
+
+.cabecera {
+    grid-area: a;
+}
+
+.menu {
+    grid-area: b;
+    margin-top: 6px;
+    background: rgb(190, 238, 240);
+}
+
+.menu li {
+    display: inline-block;
+    list-style: none;
+    padding-left: 25px;
+    font: bold 14px verdana, sans-serif;
+}
+
+.datosdelejercicio {
+    grid-area: c;
+
+}
+
+.lateral {
+    grid-area: d;
+    text-align: center;
+    background: rgb(155, 178, 179);
+    margin: 4px;
+
+}
+
+.cajamapa {
+    grid-column: e;
+   /* width: 50%;
+    margin-left: 5%;*/
+    margin:10px;
+    width: 280px;height: 160px;;
+
+}
+
+.tablaRegistros {
+    grid-column: f;
+
+}
+
+.pie {
+    grid-area: g;
+    text-align: center;
+}
+
+
+h3 {
+    background: rgb(155, 178, 179);
+    color: #000;
+    padding-left: 10%;
+}
+
+/* /////////////////   TABLE RESPONSIVE ///////////////////////////////////// */
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+table th,
+table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .8em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: center;
+
+    }
+
+    table td::before {
+        /*
+* aria-label has no advantage, it won't be read inside a table
+content: attr(aria-label);
+*/
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+/* /////////////////   TABLE RESPONSIVE ///////////////////////////////////// */
+
+
+
+
+
+fieldset {
+    background-color: rgb(237, 240, 243);
+}
+
+
+header {
+    align-items: center;
+    color: lightslategray
+}
+
+footer {
+    font-size: small;
+    color: darkolivegreen;
+}
+
+#titulo {
+    display: inline;
+    margin-left: 2%;
+    vertical-align: bottom;
+    font-size: 64px;
+}
+
+@media screen and (max-width:600px) {
+    #titulo {
+        display: block;
+    }
+}
+
+
+h2 {
+    color: darkslategray;
+}
+
+/* clase que se aplica al div que contiene el mapa de Google Maps*/
+#map_canvas {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* ************************* MENU AMBURGUESA *************************** */
+nav input {
+    display: none;
+}
+
+nav label {
+    display: none;
+}
+
+@media screen and (max-width: 790px) {
+    * {
+        font-family: Arial;
+    }
+
+    ul {
+        display: none;
+    }
+
+    #menuopciones:checked~ul {
+        display: block;
+    }
+
+    #menuopciones {
+        display: none;
+    }
+
+    nav label {
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+        margin: 12px;
+
+    }
+
+    /* Estilo del boton cuando se pasa el mouse por encima*/
+    nav label:hover {
+        background: rgb(190, 238, 240);
+    }
+
+    /* Estilo del boton cuando el menú está expandido*/
+    nav input:checked~label {
+        background: lightgrey;
+    }
+
+    nav ul {
+        margin-top: 0;
+        padding: 0;
+        width: 200px;
+        opacity: 0.96;
+        background: rgb(190, 238, 240);
+
+    }
+
+
+    nav ul li {
+        display: block;
+        background: rgb(190, 238, 240);
+        margin: 0;
+        padding-left: 10px;
+        list-style: none;
+        border-bottom: 1px solid grey;
+        width: 100%;
+    }
+
+    /*Estilo cuando el mouse pasa encima de cada link del menu*/
+    li:hover {
+        filter: brightness(110%);
+
+    }
+
+    /* ************************* MENU AMBURGUESA *************************** */
+
+
+}
+
+/* Menu  Ventana normal*/
+li:hover {
+    filter: brightness(110%);
+    color: rgb(61, 13, 194);
+    background-color: rgb(137, 223, 235);
+    border-radius: 7px;
+    padding: 7px;
+    box-shadow: 0px 14px 24px 0px rgba(0, 0, 0, 0.10);
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    display: inline;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    padding: 1px 10px 10px 10px;
+    font-size: 20px;
+    margin-left: 5px;
+    transition: border-bottom 80ms;
+    cursor: pointer;
+}
+
+.selected,
+li:hover {
+    border-bottom: 7px solid rgba(255, 0, 0, 0.7);
+    padding-bottom: 3px;
+}
+
+/*ocultar el input type fiele*/
+input[type="file"] {  
+           
+    display: none;
+}
+
+#cImagen{
+    width: 300px;
+}
+n #cDescripcion{
+    width: 300px;
+}
+.imagenFichero{
+    
+    width:30px;
+    height: 30px;
+}
+#lupa{width:30px;height: 30px;}

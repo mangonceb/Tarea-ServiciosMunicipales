@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Formación Profesional</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- MATERIAL DESINg-->
+
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+
+
+<body>
+    <main>
+        
+            <header class="cabecera">
+                <picture style="margin: 10px;">
+                    <source media="(min-width: 500px)" srcset="imagenes/Logo.png">
+                    <img id="imagenTitulo" src="imagenes/Logop.png" alt="Logo CIFP">
+                </picture>
+                <h1 id="titulo">Servicios Municipales</h1>
+
+            </header>
+
+
+            <article class="menu">
+                <ul>
+                    <li>Buscar Familia
+                        <select id="FamiliaSeleccionada">
+                            <option value="">Seleccione Tipo</option>
+                            <option value="Gratuitos">Gratuitos</option>
+                            <option value="Mensuales">Mensuales</option>
+                            <option value="Anuales">Anuales</option>
+                            <option value="Indefinidos">Indefinidos</option>
+                        </select>
+                    </li>
+                    <li>
+                        <b>Fecha Solicitud:</b><input type="date" id="fechaDesde" />
+                    </li>
+
+                    <li>
+                        <b>Contacto Solicitud</b><input type="text" id="contacto" />
+                    </li>
+                    <li>
+                        <b>Teléfono</b><input type="text" id="Teléfono" />
+                    </li>
+                    <li>
+                        <b>Email</b><input type="text" id="Email" />
+                    </li>
+                    <li>
+                        <img src="./imagenes/lupa.jpg" id="lupa" onclick="generarServicios()" /> </img>
+                    </li>
+                </ul>
+            </article>
+
+
+            <article aria-label="Datos negocio" class="datosdelejercicio">
+                <header>
+                    <h3>
+                        Servicios Municipales Disponibles
+                    </h3>
+                </header>
+                <fieldset>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Duracion</th>
+                                <th scope="col">Calle</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoServicios">
+                           <!--  <tr>
+                               <td data-label="ID">Visa - 3412</td>
+                            <td data-label="Nombre">04/01/2016</td>
+                            <td data-label="Email">$1,190</td>
+                            <td data-label="Tipo">03/01/2016 - 03/31/2016</td>
+                          </tr>-->
+                        </tbody>
+                        
+                    </table>
+
+                </fieldset>
+
+            </article>
+
+
+
+            <article class="tablaRegistros">
+                <!-- Enlace de la opción de menú Listado Negocios-->
+                <a name="primera_seccion"></a>
+
+                <h3> Servicios Contratados </h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Importe</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoPedido">
+                       <!-- <tr>
+                            <td data-label="ID">Visa - 3412</td>
+						<td data-label="Nombre">04/01/2016</td>
+						<td data-label="Email">$1,190</td>
+						<td data-label="Tipo">03/01/2016 - 03/31/2016</td>
+					  </tr>-->
+                    </tbody>
+                </table>
+
+
+            </article>
+
+            <article class="cajamapa">
+                <header>
+                    <h3>
+                        Mapa
+                    </h3>
+                </header>
+                <div class="map_canvas" id="map_canvas">
+                </div>
+            </article>
+
+
+            <footer class="pie">
+
+                T o t a l <input type="text" disabled="true" id="total" value="0"/> </br></br>
+
+                Desarrollo de Aplicaciones Web(<cite>DAW</cite>) &copy; CIFP Santa Catalina
+
+            </footer>
+
+    
+
+    </main>
+
+</body>
+
+<script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeNRBEIWYeWRRvY8On_9pkSD1_J_zLykQ&libraries=geometry">
+</script>
+</script>
+<script src="./js/funciones.js"></script>
+<script src="./js/funcionesMapa.js"></script>
+<script type="text/javascript" src="./js/BdWebSql.js"></script>
+
+
+</html>
