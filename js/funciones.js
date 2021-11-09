@@ -83,7 +83,7 @@ function generarServicios(evt) {
 
                     /*Espera 500ms para darle tiempo al array a cargar la calle creada con la latitud y la longitud
                     en la tabla, y también evitar el error de la API de google maps de acceso*/
-                    await espera(500);
+                    await espera(600);
 
                     //Añadimos a la tabla la posición de la calle que corresponde
                     dato = document.createTextNode(arrayCalles[i]);
