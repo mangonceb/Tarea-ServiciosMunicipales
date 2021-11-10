@@ -204,7 +204,7 @@ function calculoimporte() {
     console.log(cantidadTrs)
     var suma = 0;
     for(i=1;i<=cantidadTrs;i++){
-       suma+=parseInt(document.querySelector("#cuerpoPedido tr:nth-child("+i+") td:nth-child(5) input").value)
+       suma+=parseFloat(document.querySelector("#cuerpoPedido tr:nth-child("+i+") td:nth-child(5) input").value)
     }
     var ctotal = document.querySelector("#total");
     ctotal.value = suma;
