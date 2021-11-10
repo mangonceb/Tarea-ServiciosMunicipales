@@ -190,17 +190,24 @@ function calculoimporte() {
     //Accede del tr, al hijo número 4, que es el campo de importe
     var importelinea = hijosVentaPedido[4].firstChild;
 
+    importelinea.innerHTML = importeLinea
     importelinea.value = importeLinea
-
+    console.log(importeLinea)
     if (isNaN(importelinea.value)) {
         importelinea.value = '0';
     }
     if (isNaN(totalpedido)) {
         totalpedido = 0;
     }
-    totalpedido += importeLinea;
+    var trs = document.getElementById('cuerpoPedido').getElementsByTagName('tr');
+    var cantidadTrs = trs.length;
+    console.log(cantidadTrs)
+    var suma = 0;
+    for(i=1;i<=cantidadTrs;i++){
+       suma+=parseInt(document.querySelector("#cuerpoPedido tr:nth-child("+i+") td:nth-child(5) input").value)
+    }
     var ctotal = document.querySelector("#total");
-    ctotal.value = totalpedido;
+    ctotal.value = suma;
 }
 
 
